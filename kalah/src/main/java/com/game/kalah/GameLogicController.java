@@ -74,12 +74,9 @@ public class GameLogicController {
 
 		// we are done moving the stones on the board, time to split the players
 		// again
-		System.out.println(fullBoard);
 		List<List<Integer>> split = Lists.partition(fullBoard, 7);
 		List<Integer> pl1_afterMove = split.get(0);
 		List<Integer> pl2_afterMove = split.get(1);
-		System.out.println(pl2_afterMove);
-		System.out.println(pl1_afterMove);
 
 		String whoseWinner = getStatus(pl1_afterMove, pl2_afterMove);
 		List<List<Integer>> nextMove = new ArrayList<List<Integer>>();

@@ -32,8 +32,36 @@ Note: I needed to use my imagination and revers the player 2, becasue in the gam
 
 1. Step one: combine both players and create a full Board. so lets say for the first move we gonna have something like this:
 
-0|6|6|6|6|6|6
--|-|-|-|-|-|-
-6|6|6|6|6|6|0
-2. Step two: 
-3. Step 3:
+player-2|0|6|6|6|6|6|6
+-|-|-|-|-|-|-|-
+player-1|6|6|6|6|6|6|0
+
+2. Step two: Now we make a move. pick the index that has been chosen, take the number of its stones, make it empty and from the next index we add one until the number of remaining stones are zero. so this would be the result if player one choose index 0 of its board.
+
+player-2|0|6|6|6|6|6|6
+-|-|-|-|-|-|-|-
+player-1|0|7|7|7|7|7|1
+
+Note: if player one playes, the loop of adding will jump index 13 which is Playe 2 Kalah and if player 2 makes a move, the loop will jump index 6 which is the player 1 Kalah.
+
+3. Step 3: who is next? now that we made the moves, we will call whoseNext method to check a few things.
+
+	i. if the last stone fall in the player's Kalah, we set the next person to move as the same player
+	
+		 if (lastMoveFlag == 6 && player == 1) {
+			playerTurn.add(1);
+		} else if (lastMoveFlag == 13 && player == 2) {
+			playerTurn.add(2);
+		}
+
+	ii.If the last stone seed lands in an empty house owned by the player, and the opposite house contains seeds, both the last seed 	and the opposite seeds are captured and placed into the player's store.
+	
+	iii. and at lat if none of the rules on top applies, i will just switch the player.
+	
+4. Step 4: check for the game status by calling `getStatus()`. we have three statuses (0,1,2). in this method i will add the pits stones of each player. if the sum is 0 that means that player is the winner. 
+
+	i. if player 1 wins the status will be 1
+	
+	ii. if player 2 wins the status will be 2
+	
+	iii. if non of them wins the status wil be 0 and the game will continue. 

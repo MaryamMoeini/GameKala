@@ -15,18 +15,19 @@
 			<tr id="player-one">
 				<c:forEach items="${stones2}" var="stone" varStatus="count">
 					<td ><a href="#" value="${stone}"
-						id="pl2_${count.index}" onclick="action(this)">${stone}</a></td>
+						id="2_${count.index}" onclick="action(this)">${stone}</a></td>
 				</c:forEach>
 
 			</tr>
 			<tr id="player-two">
 				<c:forEach items="${stones1}" var="stone" varStatus="count">
 					<td ><a href="#" value="${stone}"
-						id="pl1_${count.index}" onclick="action(this)">${stone}</a></td>
+						id="1_${count.index}" onclick="action(this)">${stone}</a></td>
 				</c:forEach>
 			</tr>
 		</tbody>
 	</table>
+	<span id="msg" style="color:red; display:none;"></span>
 </body>
 <script type="text/javascript">
 function action(e){
@@ -39,7 +40,7 @@ function action(e){
 	var player = split[0];
 	
 	
-	if(player =='pl2'){
+	if(player =='2'){
 		console.log(position);
 		console.log(player);
 		switch(position){
@@ -69,8 +70,8 @@ function action(e){
 	
 	
 	for(var i=0; i<=6; i++){
-		var value1 = $('#pl1_'+i).text();
-		var value2 = $('#pl2_'+i).text();
+		var value1 = $('#1_'+i).text();
+		var value2 = $('#2_'+i).text();
 		player2[i] = value2;
 		player1[i] = value1;
 	}
@@ -91,12 +92,19 @@ function action(e){
 		   success: function(data){
 		     console.log(data);
 		     $.each(data[0] , function(i, val) { 
-		    	 $('#pl1_'+i).text(val);
+		    	 $('#1_'+i).text(val);
 		    	});
 		   
 		     $.each(data[1] , function(i, val) { 
-		    	 $('#pl2_'+i).text(val);
+		    	 $('#2_'+i).text(val);
 		    	});
+		     
+		     console.log("whose turn: " + data[2]);
+		     if(data[2][0] == 0){
+		    	 $('#msg').text(" Game Over, the winner is : Player "+data[2][1]);
+		    	 $('#msg').css("display" ,"block");
+		     }
+		     
 		   }
 		});
 	

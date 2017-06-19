@@ -65,3 +65,17 @@ Note: if player one playes, the loop of adding will jump index 13 which is Playe
 	ii. if player 2 wins the status will be 2
 	
 	iii. if non of them wins the status wil be 0 and the game will continue. 
+
+
+<h3>Test the Application</h3>
+As the neccessity of any web application, I have created a JUnit test which will test the first move if the player one click on index 0.
+The result of the test is this:
+
+player-2|0|6|6|6|6|6|6
+-|-|-|-|-|-|-|-
+player-1|6|6|6|6|6|6|0
+
+
+player-2|0|6|6|6|6|6|6
+-|-|-|-|-|-|-|-
+player-1|0|7|7|7|7|7|1

@@ -1,6 +1,6 @@
 # GameKala
 
-<h> Kala (Mancala) Game</h>
+<h1> Kala (Mancala) Game</h1>
 
 *About the game* 
 The game provides a Kalah board and a number of seeds or counters. The board has 12 small pits, called houses, on each side.

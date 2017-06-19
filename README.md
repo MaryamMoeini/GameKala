@@ -1,8 +1,6 @@
 # GameKala
 
-<h1> Kala (Mancala) Game</h1>
-
-*About the game* 
+<h2> About the game</h2>
 The game provides a Kalah board and a number of seeds or counters. The board has 12 small pits, called houses, on each side.
 each player gets one or more moves depending on the result of the previouse move. here are a few rules:
 * Rule No1 : if last stone drops in Mancala, the player gets one more move

@@ -123,10 +123,6 @@ public class GameLogicController {
 		 * player, and the opposite house contains seeds, both the last seed and
 		 * the opposite seeds are captured and placed into the player's store
 		 */
-		
-		
-		System.out.println(pl2_afterMove);
-		System.out.println(pl1_afterMove);
 		if (playerTurn.isEmpty()) {
 			if (lastMoveFlag < 6 && player == 1) {
 				int nomberOfStones = pl1_afterMove.get(lastMoveFlag);

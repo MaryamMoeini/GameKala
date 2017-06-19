@@ -44,7 +44,7 @@ player-1|0|7|7|7|7|7|1
 
 Note: if player one playes, the loop of adding will jump index 13 which is Playe 2 Kalah and if player 2 makes a move, the loop will jump index 6 which is the player 1 Kalah.
 
-3. Step 3: who is next? now that we made the moves, we will call whoseNext method to check a few things.
+3. Step 3: who is next? now that we made the moves, we will call `whoseNext()` to check a few things.
 
 	i. if the last stone fall in the player's Kalah, we set the next person to move as the same player
 	
